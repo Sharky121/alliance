@@ -26,6 +26,7 @@
       <a class="breadcrumbs-list__link"><?= $product_title; ?></a>
     </li>
   </ul>
+
   <section class="main-content__product-info">
     <h2 class="visually-hidden">Информация о продукте</h2>
     <div class="product-wrapper product">
@@ -67,6 +68,7 @@
 
     <p class="small-text">*Мы оставляем за собой право вносить изменения без предварительного уведомления.</p>
   </section>
+
   <section class="main-content__product-videos product-videos">
     <h2 class="product-videos__title section__title title-bg">
       <span class="title-bg__bg-text">Видео</span>
@@ -101,6 +103,7 @@
       <?php endforeach; ?>
     </div>
   </section>
+
   <section class="main-content__callback callback">
     <h2 class="callback__title section__title title-bg">
       <span class="title-bg__bg-text">Остались вопросы?</span>
@@ -112,18 +115,18 @@
 
       <div class="form-group question-form__form-group">
         <p>
-          <label class="form-label form-label--grey" for="name">Представьтесь</label>
-          <input class="form-input form-input--grey" id="name" name="name" type="text" placeholder="Иванов Александр Сергеевич" required>
+          <label class="form-label form-label--grey" for="name">Ваше имя</label>
+          <input class="form-input form-input--grey" id="name" name="name" type="text" required>
         </p>
 
         <p>
           <label class="form-label form-label--grey" for="name">Введите ваш email</label>
-          <input class="form-input form-input--grey" id="email" name="email" type="email" placeholder="email@email.ru" required>
+          <input class="form-input form-input--grey" id="email" name="email" type="email" required>
         </p>
 
         <p>
           <label class="form-label form-label--grey" for="name">Введите ваш номер телефона</label>
-          <input class="form-input form-input--grey" id="footer-phone" name="phone" type="phone" placeholder="+7 000 000 00 00" required>
+          <input class="form-input form-input--grey" id="footer-phone" name="phone" type="phone" required>
         </p>
       </div>
 
@@ -147,14 +150,14 @@
     <form class="price-form">
       <input name="product_title" type="hidden" value="<?= $product_title; ?>">
 
-      <label class="form-label" for="name">Представьтесь</label>
-      <input class="form-input" id="name" name="name" type="text" placeholder="Ваше имя" required>
+      <label class="form-label" for="name">Ваше имя</label>
+      <input class="form-input" id="name" name="name" type="text" required>
 
       <label class="form-label" for="name">Введите ваш email</label>
-      <input class="form-input" id="email" name="email" type="email" placeholder="Ваш email" required>
+      <input class="form-input" id="email" name="email" type="email" required>
 
       <label class="form-label" for="name">Введите ваш номер телефона</label>
-      <input class="form-input" id="footer-phone" name="phone" type="phone" placeholder="+7 000 000 00 00" required>
+      <input class="form-input" id="footer-phone" name="phone" type="phone" required>
 
       <button class="form-btn" onclick="ym(33475678,'reachGoal','getPrice'); return true;">Отправить</button>
     </form>

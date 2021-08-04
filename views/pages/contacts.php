@@ -17,16 +17,20 @@
       <td class="contacts-table__td">Общество с ограниченной ответственностью «Альянс-Пром»</td>
     </tr>
     <tr class="contacts-table__tr">
+      <td class="contacts-table__td">Сокращенное наименование предприятия</td>
+      <td class="contacts-table__td">ООО «Альянс-Пром»</td>
+    </tr>
+    <tr class="contacts-table__tr">
       <td class="contacts-table__td">Руководитель предприятия</td>
-      <td class="contacts-table__td">Абрамова Анастасия Вадимовна</td>
+      <td class="contacts-table__td">Директор: Абрамова Анастасия Вадимовна</td>
     </tr>
     <tr class="contacts-table__tr">
       <td class="contacts-table__td">Адрес юридический</td>
-      <td class="contacts-table__td">390013, РФ, г. Рязань, проезд Завражнова, дом 5, литера А, офис 512</td>
+      <td class="contacts-table__td">390000, РФ, г. Рязань, ул. Петрова д.10, офис.212</td>
     </tr>
     <tr class="contacts-table__tr">
       <td class="contacts-table__td">Адрес фактический</td>
-      <td class="contacts-table__td">390000, РФ, г. Рязань, ул. Петрова, 10Г</td>
+      <td class="contacts-table__td">390000, РФ, г. Рязань, ул. Петрова д.10, офис.212</td>
     </tr>
     <tr class="contacts-table__tr">
       <td class="contacts-table__td">Адрес склада</td>
@@ -34,7 +38,7 @@
     </tr>
     <tr class="contacts-table__tr">
       <td class="contacts-table__td">Свидетельство о государственной регистрации</td>
-      <td class="contacts-table__td">1176234028519 от 23.11.2017</td>
+      <td class="contacts-table__td">1838728 от 23.11.2006</td>
     </tr>
     <tr class="contacts-table__tr">
       <td class="contacts-table__td">ИНН / КПП</td>

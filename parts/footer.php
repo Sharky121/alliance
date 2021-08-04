@@ -53,7 +53,7 @@
       <h3 class="main-footer__title">Контакты</h3>
       <ul class="footer-contacts__list footer-contacts-list">
         <li class="footer-contacts-list__item">
-          г. Рязань, 198км Окружной автодороги, 6 (склад)
+          г. Рязань, ул.Связи, 25 стр. 2 (cклад)
         </li>
         <li class="footer-contacts-list__item">
           г. Рязань, ул. Петрова, 10 (офис)
