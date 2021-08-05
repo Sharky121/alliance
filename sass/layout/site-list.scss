@@ -102,3 +102,10 @@
     }
   }
 }
+
+@include desktop-size {
+
+  .site-list__item {
+    margin-right: 19.5px;
+  }
+}

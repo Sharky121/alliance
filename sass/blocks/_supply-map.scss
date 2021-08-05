@@ -1,0 +1,50 @@
+.supply-map {
+  padding: 0;
+}
+
+.supply-map__svg {
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: center;
+}
+
+.supply-map__title {
+  margin: 0;
+
+  font-size: 26px;
+  line-height: 1;
+  color: $color-green;
+  text-align: center;
+}
+
+@include tablet-size {
+  #svg-map {
+    width: 800px;
+    height: auto;
+  }
+
+  .supply-map__wrapper {
+    position: relative;
+  }
+
+  .supply-map__subtitle {
+    margin: 0;
+
+    font-size: 16px;
+  }
+
+  .supply-map__title {
+    margin: 0;
+
+    font-size: 26px;
+    line-height: 1;
+    color: $color-green;
+  }
+
+  .supply-map__content {
+    position: absolute;
+    top: 60px;
+    left: 640px;
+  }
+}

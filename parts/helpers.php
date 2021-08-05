@@ -96,3 +96,31 @@ function cutText(string $text, int $id, int $num_symbols, string $mode): string 
         return "<p class='news__text'>$new_text...<a class='news__more-link' href='?view=news-page&id=$id'> читать далее</a></p>";
     }
 }
+
+function cutTextArticle(string $text, int $id, int $num_symbols, string $mode): string {
+  $words = explode(" ", $text);
+  $current_length = 0;
+  $new_text_array = [];
+
+  foreach ($words as $word) {
+    $word_length = mb_strlen($word);
+    $current_length = $current_length + $word_length;
+
+    if ($current_length <= $num_symbols) {
+      $new_text_array[] = $word;
+    }
+  }
+
+  $new_text = implode(" ", $new_text_array);
+
+  if ($current_length <= $num_symbols) {
+    return "<p class='article__text'>$new_text</p>";
+  }
+
+  if ($mode == 'title') {
+    return "<p class='article__text'>$new_text...</p>";
+  }
+  if ($mode == 'text') {
+    return "<p class='article__text'>$new_text...<a class='article__more-link' href='?view=article-page&id=$id'> читать далее</a></p>";
+  }
+}

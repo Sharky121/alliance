@@ -10,9 +10,8 @@ foreach ($data as $val) {
 ?>
 
 <main class="article-page">
-  <div class="container article">
+  <div class="container">
     <h1 class="main-title">Полезные материалы</h1>
-
     <ul class="breadcrumbs-list">
       <li class="breadcrumbs-list__item">
         <a class="breadcrumbs-list__link" href="index.php">Главная</a>
@@ -24,9 +23,7 @@ foreach ($data as $val) {
         <a class="breadcrumbs-list__link"><?= $article_title; ?></a>
       </li>
     </ul>
-
     <div class="article-page__content">
-
       <?= $article_content; ?>
     </div>
   </div>

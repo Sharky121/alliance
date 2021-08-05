@@ -1,7 +1,9 @@
 import {createVideoTag} from './create-video-tag.js'
 import {onYouTubeIframeAPIReady} from './yt-video-api.js';
+import {REGIONS, Colors} from './consts.js';
 
 $(document).ready(function () {
+  const map = document.querySelector('#svg-map');
   const headerMain = $('.js-main-header');
   const videoElement = document.querySelector('.bg-video');
   const headerMainHeight = headerMain.innerHeight();
@@ -21,6 +23,45 @@ $(document).ready(function () {
     } else {
       Node.MAIN_NAV.classList.add(`main-nav--closed`);
       Node.MAIN_NAV.classList.remove(`main-nav--open`);
+    }
+  }
+
+  if (map) {
+    const svgMap = Snap(map);
+    const regionsMap = new Set(REGIONS);
+
+    svgMap.attr({
+      viewBox: [0, 0, 1224.449, 760.6203]
+    });
+
+    Snap.load("/img/russia.svg", onSVGLoaded);
+
+    function onSVGLoaded(svg){
+      svgMap.append(svg);
+
+      const CONTURS = map.querySelectorAll('path');
+
+      CONTURS.forEach((el) => {
+        const TITLE_ELEMENT = document.querySelector('.supply-map__title');
+        const id = el.getAttribute('id');
+        const d = el.getAttribute('d');
+        const title = el.getAttribute('title');
+        const area = svgMap.path(d).attr({fill: Colors.GREY});
+
+        if (regionsMap.has(id)) {
+          area.attr({fill: Colors.GREEN});
+        }
+
+        area.mouseover(function() {
+          area.attr({"fill-opacity": 0.5});
+          TITLE_ELEMENT.textContent = title;
+        });
+
+        area.mouseout(function() {
+          area.attr({"fill-opacity": 1});
+          TITLE_ELEMENT.textContent = 'Россия';
+        });
+      });
     }
   }
 

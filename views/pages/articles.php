@@ -20,20 +20,17 @@
     <h2 class="visually-hidden">Статьи</h2>
 
     <ul class="articles__list">
-      <?php foreach ($data as $articles): ?>
+      <?php foreach ($data as $article): ?>
         <li class="articles__item">
           <article class="article">
-            <img class="article__img" src="<?= $articles['small_image_path']; ?>" alt="">
+            <img class="article__img" src="<?= $article['small_image_path']; ?>" alt="">
             <div class="article__inner">
               <h3 class="article__title">
-                <a class="news__link">
-                  <?= $articles['title']; ?>
+                <a href="?view=article-page&id=<?= $article['id'] ?>">
+                  <?= $article['title']; ?>
                 </a>
               </h3>
-              <p class="article__text">
-
-                <?= cutText($articles['small_content'], $articles['id'], 300, 'text'); ?>
-              </p>
+              <?= cutTextArticle($article['small_content'], $article['id'], 92, 'text'); ?>
             </div>
           </article>
         </li>

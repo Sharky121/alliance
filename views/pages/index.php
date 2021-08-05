@@ -25,6 +25,7 @@ $day = date("d", strtotime($news_date));
 
 <h1 class="visually-hidden">Альянс-пром</h1>
 
+<!-- ГЛАВНАЯ СЕКЦИЯ -->
 <section class="index__section-header section-header">
   <div class="section-header__video">
     <div class="bg-video" id="player"></div>
@@ -40,6 +41,7 @@ $day = date("d", strtotime($news_date));
   </div>
 </section>
 
+<!-- ПРЕИМУЩЕСТВА -->
 <section class="section section-features">
   <div class="container">
     <h2 class="section__title title-bg">
@@ -133,30 +135,26 @@ $day = date("d", strtotime($news_date));
   </div>
 </section>
 
-<section class="section about">
-  <div class="container about__container">
-<!--    <video width="480" controls poster="">-->
-<!--      <source src="/video/video.mp4" type="video/mp4">-->
-<!--      <source src="/video/video.ogv" type="video/ogg">-->
-<!--      <source src="/video/video.webm" type="video/webm">-->
-<!--      Your browser doesn't support HTML5 video tag.-->
-<!--    </video>-->
-    <img class="about__img" src="/img/products/prod1.png" alt="">
+<!-- КАРТА ПОСТАВОК -->
+<section class="section supply-map">
+  <div class="container supply-map__container">
+    <h2 class="section__title title-bg">
+      <span class="title-bg__bg-text">Карта</span>
+      Карта наших поставок
+    </h2>
 
-    <div>
-      <h2 class="section__title title-bg title-bg--about">Лучшее оборудование</h2>
-      <p class="about__text">Оборудование под маркой Titan и Сhrome для литья пластмасс и серии L.K.  MACHINERY MANUFACTURING CO., LTD для литья цветных металлов под давлением.</p>
-
-      <ul class="about__list">
-        <li class="about__item">Ведущий поставщик оборудования в сфере переработки пластмасс и цветных металлов</li>
-        <li class="about__item">Предлагаем широкий спектр периферии ведущих заводов Китая</li>
-        <li class="about__item">Оптимальная линейка оборудования по соотношению цена-качество</li>
-        <li class="about__item">Реализовываем проекты по производству технологической оснастки (пресс-форм)</li>
-      </ul>
+    <div class="supply-map__wrapper">
+      <div class="supply-map__svg">
+        <svg id="svg-map" viewBox="0 0 1224.449 760.6203" width="280"></svg>
+      </div>
+      <div class="supply-map__content">
+         <p class="supply-map__title">Россия</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ВИДЕО -->
 <section class="section section-works">
   <div class="container">
     <h2 class="section__title title-bg">
@@ -240,6 +238,7 @@ $day = date("d", strtotime($news_date));
   </div>
 </section>
 
+<!-- НОВОСТИ -->
 <section class="section section-news">
   <div class="container">
     <h2 class="section__title title-bg">
@@ -279,6 +278,7 @@ $day = date("d", strtotime($news_date));
   </div>
 </section>
 
+<!-- КАРТА -->
 <section class="section-map" id="section-map">
   <div class="container">
     <h2 class="section__title title-bg">

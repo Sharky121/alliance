@@ -17,7 +17,9 @@
     "url": "https://github.com/Sharky121/alliance/issues"
   },
   "homepage": "https://github.com/Sharky121/alliance#readme",
-  "dependencies": {},
+  "dependencies": {
+    "tippy.js": "^6.3.1"
+  },
   "devDependencies": {
     "autoprefixer": "^9.8.0",
     "browser-sync": "^2.26.7",
