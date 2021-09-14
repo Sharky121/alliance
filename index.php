@@ -2,12 +2,12 @@
 
 require_once 'parts/init.php';
 
-define("INDEX_ID", 1);
-define("PRESSFORM_ID", 2);
-define("SERVICE_ID", 3);
-define("CONTACTS_ID", 6);
-define("ARTICLES_ID", 10);
-define("PRODUCTION_ID", 7);
+const INDEX_ID = 1;
+const PRESSFORM_ID = 2;
+const SERVICE_ID = 3;
+const CONTACTS_ID = 6;
+const ARTICLES_ID = 10;
+const PRODUCTION_ID = 7;
 
 $view = empty($_GET['view']) ? 'index' : $_GET['view'];
 
@@ -28,7 +28,7 @@ function get_pageData(string $page, $link) {
         case 'index.php':
           return getIndex($link, INDEX_ID);
         case 'contacts.php':
-          return getIndex($link, CONTACTS_ID);
+          return getContacts($link, CONTACTS_ID);
         case 'customer-service.php':
         case 'service.php':
           return getIndex($link, SERVICE_ID);

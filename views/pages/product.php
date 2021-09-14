@@ -29,20 +29,20 @@
 
   <section class="main-content__product-info">
     <h2 class="visually-hidden">Информация о продукте</h2>
-    <div class="product-wrapper product">
+    <div class="product-wrapper product" itemscope itemtype="http://schema.org/Product">
       <div class="product__img">
         <?php if (empty($big_image_path)): ?>
-          <img src="<?= $image_path; ?>" alt="Изображение отсутствует">
+          <img src="<?= $image_path; ?>" alt="Изображение отсутствует" itemprop="image">
         <?php else: ?>
-          <img src="<?= $big_image_path; ?>" alt="<?= $product_title; ?>">
+          <img src="<?= $big_image_path; ?>" alt="<?= $product_title; ?>" itemprop="image">
         <?php endif; ?>
       </div>
       <div class="product__info product-info">
-        <h1 class="product-info__title"><?= $product_title; ?></h1>
+        <h1 class="product-info__title" itemprop="name"><?= $product_title; ?></h1>
         <?php if ($price !== NULL): ?>
-          <span class="product-info__price">Цена от <?= number_format($price, 0, '', ' '); ?>$</span>
+          <span class="product-info__price" itemprop="price">Цена от <?= number_format($price, 0, '', ' '); ?>$</span>
         <?php endif; ?>
-        <p class="product-info__small_desc">
+        <p class="product-info__small_desc" itemprop="description">
           <?php if (empty($small_desc)): ?>
             Наша компания по праву занимает место среди ведущих поставщиков оборудования в сфере переработки пластмасс и цветных металлов
           <?php else: ?>

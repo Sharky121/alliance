@@ -1,3 +1,11 @@
+<?php
+  /**
+ * @var array $data
+ */
+
+  $content = $data[0]['content'];
+?>
+
 <div class="container">
   <h1 class="main-title">Контакты</h1>
 
@@ -10,53 +18,7 @@
     </li>
   </ul>
 
-
-  <table class="contacts-table">
-    <tr class="contacts-table__tr">
-      <td class="contacts-table__td">Полное наименование</td>
-      <td class="contacts-table__td">Общество с ограниченной ответственностью «Альянс-Пром»</td>
-    </tr>
-    <tr class="contacts-table__tr">
-      <td class="contacts-table__td">Сокращенное наименование предприятия</td>
-      <td class="contacts-table__td">ООО «Альянс-Пром»</td>
-    </tr>
-    <tr class="contacts-table__tr">
-      <td class="contacts-table__td">Руководитель предприятия</td>
-      <td class="contacts-table__td">Директор: Абрамова Анастасия Вадимовна</td>
-    </tr>
-    <tr class="contacts-table__tr">
-      <td class="contacts-table__td">Адрес юридический</td>
-      <td class="contacts-table__td">390000, РФ, г. Рязань, ул. Петрова д.10, офис.212</td>
-    </tr>
-    <tr class="contacts-table__tr">
-      <td class="contacts-table__td">Адрес фактический</td>
-      <td class="contacts-table__td">390000, РФ, г. Рязань, ул. Петрова д.10, офис.212</td>
-    </tr>
-    <tr class="contacts-table__tr">
-      <td class="contacts-table__td">Адрес склада</td>
-      <td class="contacts-table__td">390000, РФ, г. Рязань, ул.Связи, 25 стр. 2</td>
-    </tr>
-    <tr class="contacts-table__tr">
-      <td class="contacts-table__td">Свидетельство о государственной регистрации</td>
-      <td class="contacts-table__td">1838728 от 23.11.2006</td>
-    </tr>
-    <tr class="contacts-table__tr">
-      <td class="contacts-table__td">ИНН / КПП</td>
-      <td class="contacts-table__td">6234173810 / 623401001</td>
-    </tr>
-    <tr class="contacts-table__tr">
-      <td class="contacts-table__td">Телефоны для связи</td>
-      <td class="contacts-table__td"> +7 (800) 222-48-13 (звонок бесплатный), +7 (4912) 70-19-81</td>
-    </tr>
-    <tr class="contacts-table__tr">
-      <td class="contacts-table__td">Электронная почта</td>
-      <td class="contacts-table__td">sales@aliance-prom.ru</td>
-    </tr>
-    <tr class="contacts-table__tr">
-      <td class="contacts-table__td">Часы работы</td>
-      <td class="contacts-table__td">Понедельник - пятница с 10:00 до 18:00</td>
-    </tr>
-  </table>
+  <?= $content; ?>
 </div>
 
 <section class="section-map" id="section-map">
@@ -66,7 +28,6 @@
       Наше расположение
     </h2>
   </div>
-
   <div class="map" id="map"></div>
 </section>
 
