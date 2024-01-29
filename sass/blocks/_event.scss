@@ -1,0 +1,31 @@
+.event__link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.event__img {
+  width: 90px;
+  height: 60px;
+  margin-right: 20px;
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.event__inner {
+  width: calc(100% - 110px);
+}
+
+.event__title {
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 1.2;
+}

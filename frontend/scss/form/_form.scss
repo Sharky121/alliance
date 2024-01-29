@@ -1,0 +1,9 @@
+@use "../abstract";
+
+.form__group {
+  @extend %list-reset;
+}
+
+.form__submit-btn {
+  margin-top: 10px;
+}

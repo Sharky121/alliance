@@ -1,0 +1,26 @@
+@use "abstract";
+@use "form";
+
+@use "blocks/leasing-calc";
+
+.btn--primary {
+  color: #ffffff;
+
+  background-color: #4db6ac;
+  border: 1px solid #4db6ac;
+
+  &:focus {
+    color: #4db6ac;
+
+    background-color: #ffffff;
+    border: 1px solid #4db6ac;
+  }
+
+  &:hover,
+  &:active {
+    color: #4db6ac;
+
+    background-color: #ffffff;
+    border: 1px solid #4db6ac;
+  }
+}

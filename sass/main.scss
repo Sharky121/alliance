@@ -1,0 +1,64 @@
+@import "sass/variables.scss";
+@import "sass/mixins.scss";
+@import "sass/helpers.scss";
+
+// Layout
+@import "sass/layout/fonts.scss";
+@import "sass/layout/base.scss";
+@import "sass/layout/main-content.scss";
+@import "sass/layout/container.scss";
+@import "sass/layout/button.scss";
+@import "sass/layout/header.scss";
+@import "sass/layout/main-nav.scss";
+@import "sass/layout/site-list.scss";
+@import "sass/layout/submenu.scss";
+@import "sass/layout/logo.scss";
+@import "sass/layout/phone.scss";
+@import "sass/layout/address.scss";
+@import "sass/layout/main-footer.scss";
+@import "sass/layout/copyright.scss";
+@import "sass/layout/social-list.scss";
+@import "sass/layout/footer-contacts.scss";
+@import "sass/layout/footer-about.scss";
+@import "sass/layout/footer-feedback.scss";
+@import "sass/layout/send-btn.scss";
+@import "sass/layout/section.scss";
+@import "sass/layout/breadcrumbs.scss";
+@import "sass/layout/question-form.scss";
+@import "sass/layout/callback.scss";
+@import "sass/layout/product-videos.scss";
+@import "sass/layout/contacts-table.scss";
+@import "sass/layout/convert-currency.scss";
+
+
+// index
+@import "sass/index/index.scss";
+@import "sass/index/section-header.scss";
+@import "sass/index/title-bg.scss";
+@import "sass/index/features-list.scss";
+@import "sass/index/features-item.scss";
+@import "sass/index/about.scss";
+@import "sass/index/section-works.scss";
+@import "sass/index/news.scss";
+@import "sass/index/bg-video.scss";
+
+// catalog
+@import "sass/catalog/product-item.scss";
+
+// video
+@import "sass/video/video-list.scss";
+@import "sass/video/video-item.scss";
+
+// customer-service
+@import "sass/service-customer/customer-service.scss";
+@import "sass/service-customer/supplied-equipment.scss";
+@import "sass/service-customer/supplied-equipment-item.scss";
+@import "sass/service-customer/customer-service-list.scss";
+@import "sass/service-customer/customer-service-item.scss";
+
+// articles
+@import "sass/articles/articles.scss";
+@import "sass/articles/article.scss";
+
+// blocks
+@import "sass/blocks/module";

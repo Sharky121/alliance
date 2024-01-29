@@ -1,0 +1,15 @@
+.event-feed {
+  display: none;
+}
+
+@include desktop-size {
+
+  .event-feed__container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .event-feed {
+    display: block;
+  }
+}

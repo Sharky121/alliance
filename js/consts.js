@@ -1,0 +1,43 @@
+export const Colors = {
+  TRANSPARENT: 'transparent',
+  GREEN: '#4db6ac',
+  GREY: '#f8f8f8',
+}
+
+export const REGIONS = [
+  'RU-BA',
+  'RU-VLA',
+  'RU-VOR',
+  'RU-IRK',
+  'RU-KLU',
+  'RU-KIR',
+  'RU-KO',
+  'RU-KDA',
+  'RU-KYA',
+  'RU-LEN',
+  'RU-LIP',
+  'RU-MOS',
+  'RU-MOW',
+  'RU-NGR',
+  'RU-ORL',
+  'RU-PNZ',
+  'RU-PER',
+  'RU-PSK',
+  'RU-ME',
+  'RU-ROS',
+  'RU-RYA',
+  'RU-SAM',
+  'RU-SPE',
+  'RU-SAR',
+  'RU-SMO',
+  'RU-STA',
+  'RU-TA',
+  'RU-TVE',
+  'RU-TUL',
+  'RU-TYU',
+  'RU-UD',
+  'RU-ULY',
+  'RU-CHE',
+];
+
+
