@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp css",
-    "start": "gulp start"
+    "start": "gulp start",
+    "webpack-start": "webpack --watch",
+    "webpack-build": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
@@ -18,15 +20,27 @@
   },
   "homepage": "https://github.com/Sharky121/alliance#readme",
   "dependencies": {
-    "tippy.js": "^6.3.1"
+    "tippy.js": "^6.3.1",
+    "sweetalert2": "11.2.0",
+    "@fancyapps/ui": "^4.0.31",
+    "flatpickr": "^4.6.13",
+    "imask": "^6.4.3",
+    "modern-normalize": "^1.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.0",
     "browser-sync": "^2.26.7",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.10.0",
     "gulp": "^4.0.2",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.1.0",
-    "gulp-sourcemaps": "^2.6.5"
+    "gulp-sourcemaps": "^2.6.5",
+    "mini-css-extract-plugin": "^2.8.0",
+    "sass": "^1.70.0",
+    "sass-loader": "^14.1.0",
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4"
   }
 }

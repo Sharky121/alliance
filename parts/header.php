@@ -57,9 +57,9 @@
             <li class="site-list__item">
               <a class="site-list__link" href="?view=video">Наши работы</a>
             </li>
-            <li class="site-list__item">
+            <!-- <li class="site-list__item">
               <a class="site-list__link" href="?view=articles">Полезное</a>
-            </li>
+            </li> -->
             <li class="site-list__item">
               <a class="site-list__link" href="?view=contacts">Контакты</a>
             </li>

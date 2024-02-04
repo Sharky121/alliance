@@ -1,0 +1,32 @@
+@use "../../abstract" as var;
+
+.press-promo__subtitle {
+    margin: 0;
+
+    text-transform: uppercase;
+    color: var.$brand-success;
+    font-family: "OpenSans", sans-serif;
+    font-weight: 700;
+}
+
+.press-promo__title {
+    margin-top: 0;
+    margin-bottom: 5px;
+
+    text-transform: uppercase;
+    font-family: "OpenSans", sans-serif;
+    font-weight: 700;
+}
+
+.press-promo__list {
+    @extend %list-reset;
+}
+
+.press-promo__item {
+    font-size: 14px;
+    color: #777777;
+}
+
+.press-promo__request {
+    margin-top: 20px;
+}

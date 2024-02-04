@@ -121,6 +121,6 @@
     </section>
   </div>
   <section class="main-footer__copyright copyright">
-    <span class="copyright__text">© ООО «Альянс-Пром», 2006−2022</span>
+    <span class="copyright__text">© ООО «Альянс-Пром», 2006−2024</span>
   </section>
 </footer>

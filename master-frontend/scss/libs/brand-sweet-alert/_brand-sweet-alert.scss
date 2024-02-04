@@ -1,0 +1,12 @@
+@use "../../abstract" as var;
+
+@import 'sweetalert2/src/variables';
+
+
+// CONFIRM BUTTON
+$swal2-confirm-button-background-color: var.$brand-success;
+$swal2-confirm-button-focus-box-shadow: 0 0 0 3px rgba(var.$brand-success, .5);
+$swal2-close-button-hover-color: var.$brand-success;
+$swal2-confirm-button-color: var.$brand-white;
+
+@import 'sweetalert2/src/sweetalert2';

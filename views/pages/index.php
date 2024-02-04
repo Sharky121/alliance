@@ -1,13 +1,13 @@
 <?php
 $link = @mysqli_connect(
-     'mysql',
-     'root',
-     'root',
-     'p530117_alliance'
-  // 'p530117.mysql.ihc.ru',
-  // 'p530117_alliance',
-  // 'frutWYeStC',
-  // 'p530117_alliance'
+    //  'mysql',
+    //  'root',
+    //  'root',
+    //  'p530117_alliance'
+  'p530117.mysql.ihc.ru',
+  'p530117_alliance',
+  'frutWYeStC',
+  'p530117_alliance'
 ) or die('Ошибка: Невозможно подключиться к MySQL '. mysqli_connect_error());
 @mysqli_set_charset($link, "utf8");
 
@@ -32,7 +32,7 @@ $day = date("d", strtotime($news_date));
   </div>
 
   <div class="container section-header__container">
-    <h2 class="section-header__title">15 лет на рынке оборудования<br> по переработке пластмасс и цветных металлов</h2>
+    <h2 class="section-header__title">18 лет на рынке оборудования<br> по переработке пластмасс и цветных металлов</h2>
     <p class="section-header__text">Тщательный выбор поставщиков позволил нам подобрать для Вас оптимальную линейку оборудования по соотношению цена-качество</p>
     <a class="btn section-header__btn" href="?view=products">Наше оборудование</a>
     <p class="section-header__subtitle">
@@ -288,3 +288,30 @@ $day = date("d", strtotime($news_date));
   </div>
   <div class="map" id="map"></div>
 </section>
+
+<template id="press-promo-popup">
+  <swal-html>
+    <div class="press-promo">
+        <img class="press-promo__img" src="public/master/images/press-promo.jpg" width="259" height="330" alt="">
+
+        <p class="press-promo__subtitle">В наличии на складе в г. Рязань</p>
+        <h3 class="press-promo__title">Пресс кривошипный, новый, Китай</h3>
+
+        <ul class="press-promo__list">
+          <li class="press-promo__item">Усилие - 200 тонн</li>
+          <li class="press-promo__item">Размер стола 740 * 1300мм</li>
+        </ul>
+        
+        <div class="press-promo__request press-promo-request">
+          <h4 class="press-promo-request__title">Сделайте запрос предложения</h4>
+          <a class="press-promo-request__mail" href="mailto:sales@alliance-prom.ru">sales@alliance-prom.ru</a>
+          <a class="press-promo-request__phone" href="tel:84912701981">8 (4912) 70-19-81</a>, 
+          <a class="press-promo-request__phone" href="tel:88002224813">8 (800) 222-48-13</a>
+        </div>
+    </div>
+  </swal-html>
+
+  <swal-button type="confirm">
+      Понял, спасибо
+  </swal-button>
+</template>

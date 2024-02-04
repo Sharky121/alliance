@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="/css/media.css">
     <link rel="stylesheet" href="/css/main.css?230122">
     <link rel="stylesheet" href="/public/frontend.css">
+    <link rel="stylesheet" href="/public/master/main.css">
 
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >

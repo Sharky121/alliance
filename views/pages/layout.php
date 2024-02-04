@@ -41,10 +41,11 @@
     <script src="/js/lightcase.js"></script>
     <script src="/js/snap.svg-min.js"></script>
     <script src="/js/animatedModal.min.js"></script>
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=<3fe62757-4b7d-4e2d-a29d-8ae84937c4fb>&lang=ru_RU" type="text/javascript"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=c0e50373-e982-437f-9d27-cb463b9b0b32&lang=ru_RU" type="text/javascript"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
     <script type="module" src="/js/scripts.js"></script>
     <script type="module" src="/public/frontend.js"></script>
+    <script type="module" src="/public/master/bundle.js"></script>
   </body>
 </html>
