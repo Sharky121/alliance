@@ -12,6 +12,10 @@ import "./fonts/opensanssemibold.woff2";
 
 // IMAGES
 import "./images/press-promo.jpg";
+import "./images/vtpa_standart.jpg";
+import "./images/vtpa_rotate_table.jpg";
+import "./images/vtpa_one_pull_out_table.jpg";
+import "./images/vtpa_two_pull_out_table.jpg";
 
 // STYLES
 import "./scss/master-main.scss";

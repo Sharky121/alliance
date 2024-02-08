@@ -1,13 +1,13 @@
 <?php
 $link = @mysqli_connect(
-    //  'mysql',
-    //  'root',
-    //  'root',
-    //  'p530117_alliance'
-  'p530117.mysql.ihc.ru',
-  'p530117_alliance',
-  'frutWYeStC',
-  'p530117_alliance'
+     'mysql',
+     'root',
+     'root',
+     'p530117_alliance'
+  // 'p530117.mysql.ihc.ru',
+  // 'p530117_alliance',
+  // 'frutWYeStC',
+  // 'p530117_alliance'
 ) or die('Ошибка: Невозможно подключиться к MySQL '. mysqli_connect_error());
 @mysqli_set_charset($link, "utf8");
 

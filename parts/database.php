@@ -63,7 +63,7 @@ function getCatalog($link, $id): array
 
 function getProduct($link, $id): array
 {
-    $sql = "SELECT p.title, p.price, p.image_path, small_desc, content, big_image_path, p.category_id, c.id as cat_id, c.title as cat_title, video_url, v.title as video_title, p.seo_title, p.seo_description
+    $sql = "SELECT p.id, p.title, p.price, p.image_path, small_desc, content, big_image_path, p.category_id, c.id as cat_id, c.title as cat_title, video_url, v.title as video_title, p.seo_title, p.seo_description
                     FROM products p
                     INNER JOIN category c ON c.id = p.category_id
                     RIGHT JOIN video v ON v.category_id = p.category_id
