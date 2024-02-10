@@ -1,22 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { v4 as uuidv4 } from 'uuid';
 import ProductTable from "./product-table";
-import {series, standart_series, small_series, productsMap} from '../data';
+import {series, productsMap} from '../data';
 
 const VertTpaApp = () => {
     const [activeSeries, setActiveSeries] = useState({
         title: 'Стандартная серия',
         slug: 'standart'
     });
+
     const [activeProduct, setActiveProduct] = useState({
-        title: 'JS250',
-        specs: standart_series[0].specs
+        title: productsMap['standart'].data[0].title,
+        specs: productsMap['standart'].data[0].specs
     });
 
     const handleSelectSeries = (title, slug) => {
         setActiveSeries({title, slug});
-        setActiveProduct({title: activeProduct[slug][0][title] , specs: activeProduct[slug][0][specs]});
     }
 
     const handleSelectProduct = (title, specs) => {
@@ -25,6 +25,10 @@ const VertTpaApp = () => {
             specs
         });
     }
+
+    useEffect(() => {
+        setActiveProduct({title: productsMap[activeSeries.slug].data[0].title , specs: productsMap[activeSeries.slug].data[0].specs});
+    }, [activeSeries]);
 
     return (
         <PRODUCT>
