@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { v4 as uuidv4 } from 'uuid';
-import {series, standart_series, productsMap} from '../data';
+import ProductTable from "./product-table";
+import {series, standart_series, small_series, productsMap} from '../data';
 
 const VertTpaApp = () => {
     const [activeSeries, setActiveSeries] = useState({
@@ -15,12 +16,13 @@ const VertTpaApp = () => {
 
     const handleSelectSeries = (title, slug) => {
         setActiveSeries({title, slug});
-        setActiveProduct({title});
+        setActiveProduct({title: activeProduct[slug][0][title] , specs: activeProduct[slug][0][specs]});
     }
 
-    const handleSelectProduct = (title) => {
+    const handleSelectProduct = (title, specs) => {
         setActiveProduct({
-            title
+            title,
+            specs
         });
     }
 
@@ -35,6 +37,7 @@ const VertTpaApp = () => {
                 <DECSRIPTION>
                     Экономьте рабочие площади вашего производства и получайте сложные комплексные изделия с помощью вертикальных термопластавтоматов. 
                     Вертикальная конструкция помогает сократить расходы, уменьшить количество отходов, сохраняя при этом процесс как можно более эффективным.
+                    <a class="product-info__btn btn btn--green-border-hover" id="demo01" href="#animatedModal">Узнать цену</a>
                 </DECSRIPTION>
             </PRODUCT_INFO>
             <PRODUCT_CONTENT>
@@ -78,6 +81,8 @@ const VertTpaApp = () => {
                         <PRODUCT_TITLE>Наименование термопластавтомата: {activeProduct.title}</PRODUCT_TITLE>
                     )
                 }
+
+                <ProductTable specs={activeProduct.specs} />
             </PRODUCT_CONTENT>
         </PRODUCT>
     )
