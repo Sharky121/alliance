@@ -21,11 +21,18 @@ function getContacts($link, $id): array
     return fetchData($link, $sql);
 }
 
+function getReviews($link, $id): array
+{
+    $sql = "SELECT id, seo_title, seo_description, content FROM pages WHERE id = '$id'";
+
+    return fetchData($link, $sql);
+}
+
 function getCategories($link): array
 {
-  $sql = 'SELECT id, title, image_path, seo_title, seo_description FROM category ORDER BY id ASC';
+    $sql = 'SELECT id, title, image_path, seo_title, seo_description FROM category ORDER BY id ASC';
 
-//    $sql = "SELECT id, seo_title, seo_description FROM pages WHERE id = '$id'";
+    //    $sql = "SELECT id, seo_title, seo_description FROM pages WHERE id = '$id'";
 
     return fetchData($link, $sql);
 }
@@ -83,7 +90,7 @@ function getArticles($link): array
 
 function getCurrentArticle($link, $id): array
 {
-  $sql = "SELECT id, title, content, seo_title, seo_description FROM articles WHERE id ='$id'";
+    $sql = "SELECT id, title, content, seo_title, seo_description FROM articles WHERE id ='$id'";
 
-  return fetchData($link, $sql);
+    return fetchData($link, $sql);
 }

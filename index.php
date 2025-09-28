@@ -9,12 +9,12 @@ if (file_exists($env_file)) {
         if (strpos(trim($line), '#') === 0) {
             continue;
         }
-        
+
         // Разбиваем строку на ключ и значение
         list($key, $value) = explode('=', $line, 2);
         $key = trim($key);
         $value = trim($value);
-        
+
         if (!empty($key)) {
             putenv("$key=$value");
             $_ENV[$key] = $value;
@@ -45,6 +45,7 @@ const CONTACTS_ID = 6;
 const ARTICLES_ID = 10;
 const PRODUCTION_ID = 7;
 const RECOMMENDATION_ID = 9;
+const REVIEWS_ID = 11;
 
 $view = empty($_GET['view']) ? 'index' : $_GET['view'];
 

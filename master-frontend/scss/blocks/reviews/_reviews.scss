@@ -1,0 +1,29 @@
+@use "../../abstract" as var;
+
+.reviews {
+    padding: 2rem 0;
+}
+
+.reviews__gallery {
+    @extend %list-reset;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.reviews__item {
+    width: 100%;
+
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+@include var.tablet-size {
+
+    .reviews__item {
+        width: calc((100% - 2rem * 3) / 4);
+    }
+}

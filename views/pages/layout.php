@@ -80,7 +80,7 @@
   <script src="https://unpkg.com/tippy.js@6"></script>
   <script type="module" src="/js/scripts.js?hash=dsf345dsf43"></script>
   <script type="module" src="/public/frontend.js?hash=d5fgdfg5463454354f43"></script>
-  <script type="module" src="/public/master/bundle.js?hash=dsffd45345345343dfdssf43"></script>
+  <script type="module" src="/public/master/bundle.js?hash=dsffd4533dfdssf43"></script>
 </body>
 
 </html>

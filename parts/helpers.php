@@ -26,7 +26,8 @@ function include_template($name, array $data = [])
     return $result;
 }
 
-function get_month($date) {
+function get_month($date)
+{
     $date = date("m", strtotime($date));
 
     switch ($date) {
@@ -69,7 +70,8 @@ function get_month($date) {
     }
 }
 
-function cutText(string $text, int $id, int $num_symbols, string $mode): string {
+function cutText(string $text, int $id, int $num_symbols, string $mode): string
+{
     $words = explode(" ", $text);
     $current_length = 0;
     $new_text_array = [];
@@ -97,30 +99,71 @@ function cutText(string $text, int $id, int $num_symbols, string $mode): string 
     }
 }
 
-function cutTextArticle(string $text, int $id, int $num_symbols, string $mode): string {
-  $words = explode(" ", $text);
-  $current_length = 0;
-  $new_text_array = [];
+function cutTextArticle(string $text, int $id, int $num_symbols, string $mode): string
+{
+    $words = explode(" ", $text);
+    $current_length = 0;
+    $new_text_array = [];
 
-  foreach ($words as $word) {
-    $word_length = mb_strlen($word);
-    $current_length = $current_length + $word_length;
+    foreach ($words as $word) {
+        $word_length = mb_strlen($word);
+        $current_length = $current_length + $word_length;
+
+        if ($current_length <= $num_symbols) {
+            $new_text_array[] = $word;
+        }
+    }
+
+    $new_text = implode(" ", $new_text_array);
 
     if ($current_length <= $num_symbols) {
-      $new_text_array[] = $word;
+        return "<p class='article__text'>$new_text</p>";
     }
-  }
 
-  $new_text = implode(" ", $new_text_array);
+    if ($mode == 'title') {
+        return "<p class='article__text'>$new_text...</p>";
+    }
+    if ($mode == 'text') {
+        return "<p class='article__text'>$new_text...<a class='article__more-link' href='?view=article-page&id=$id'> читать далее</a></p>";
+    }
+}
 
-  if ($current_length <= $num_symbols) {
-    return "<p class='article__text'>$new_text</p>";
-  }
+/**
+ * Извлекает массив изображений из HTML-контента
+ * @param string $html HTML-контент с изображениями
+ * @return array Массив с данными изображений
+ */
+function extractImagesFromHtml(string $html): array
+{
+    $images = [];
 
-  if ($mode == 'title') {
-    return "<p class='article__text'>$new_text...</p>";
-  }
-  if ($mode == 'text') {
-    return "<p class='article__text'>$new_text...<a class='article__more-link' href='?view=article-page&id=$id'> читать далее</a></p>";
-  }
+    // Используем DOMDocument для парсинга HTML
+    $dom = new DOMDocument();
+    libxml_use_internal_errors(true); // Подавляем ошибки парсинга
+    $dom->loadHTML('<?xml encoding="utf-8" ?>' . $html);
+    libxml_clear_errors();
+
+    // Находим все теги img
+    $imgTags = $dom->getElementsByTagName('img');
+
+    foreach ($imgTags as $img) {
+        $src = $img->getAttribute('src');
+        $alt = $img->getAttribute('alt');
+        $title = $img->getAttribute('title');
+        $width = $img->getAttribute('width');
+        $height = $img->getAttribute('height');
+
+        if (!empty($src)) {
+            $images[] = [
+                'src' => $src,
+                'alt' => $alt ?: '',
+                'title' => $title ?: '',
+                'width' => $width ?: '',
+                'height' => $height ?: '',
+                'html' => $dom->saveHTML($img) // Полный HTML тега img
+            ];
+        }
+    }
+
+    return $images;
 }

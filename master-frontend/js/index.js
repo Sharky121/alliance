@@ -1,5 +1,9 @@
+import { Fancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox.css";
+
 import { createRoot } from 'react-dom/client';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+
 import CrushersApp from './react-components/crushers-app/crushers-app';
 import Autoloaders from './react-components/products/autoloaders/autoloaders';
 import Chillers from './react-components/products/chillers/chillers';
@@ -52,6 +56,10 @@ const BrandModal = Swal.mixin({
 //         template: "#press-promo-popup"
 //     });
 // }
+
+Fancybox.bind("[data-fancybox]", {
+    // Your custom options
+});
 
 if (telegramPopupElement) {
     const root = createRoot(telegramPopupElement);
