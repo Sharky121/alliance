@@ -1,0 +1,126 @@
+.telegram-popup {
+    position: fixed;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 9999;
+
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+}
+
+.telegram-popup__img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.telegram-popup__content {
+    position: relative;
+}
+
+.telegram-popup__close {
+    position: absolute;
+    top: -36px;
+    right: -36px;
+    width: 34px;
+    height: 34px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    border-radius: 6px;
+
+    svg {
+        vertical-align: middle;
+    }
+}
+
+.telegram-popup__text {
+    margin: 0 0 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.telegram-popup__buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.telegram-popup__btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.telegram-popup__btn--accept {
+    background: #4db6ac;
+    ;
+    color: white;
+}
+
+.telegram-popup__btn--accept:hover {
+    background: #4db6ac;
+    transform: translateY(-2px);
+}
+
+.telegram-popup__btn--policy {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+.telegram-popup__btn--policy:hover {
+    background: white;
+    color: black;
+    transform: translateY(-2px);
+}
+
+/* Анимация появления */
+.telegram-popup.show {
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateX(-50%) translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .telegram-popup {
+        bottom: 10px;
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    .telegram-popup__buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .telegram-popup__btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}

@@ -1,0 +1,124 @@
+.articles {
+    padding: 2rem 0;
+}
+
+.articles__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  
+    padding: 0;
+    margin: 0;
+
+    list-style: none; 
+}
+
+.articles__item {
+    height: 100%;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Контейнер для изображения с фиксированным соотношением сторон */
+.article__img-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Соотношение 16:9 */
+
+    overflow: hidden;
+}
+
+.article__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.article:hover .article__img {
+    transform: scale(1.05);
+}
+
+.article__inner {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1.5rem;
+
+    line-height: 1.1;
+}
+
+.article__title {
+    margin: 0 0 15px;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.article__title a {
+    color: #333;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.article__title a:hover {
+    color: #007bff;
+}
+
+.article__text {
+    margin: 0;
+
+    font-size: 0.95rem;
+    line-height: 1.2;
+    color: #666;
+    /* Ограничение высоты текста */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    
+    .articles__list {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .article__inner {
+        padding: 1rem;
+    }
+
+    .article__title {
+        font-size: 16px;
+        line-height: 1
+    }
+}
+
+@media (max-width: 480px) {
+
+    .articles__list {
+        grid-template-columns: 1fr;
+    }
+}

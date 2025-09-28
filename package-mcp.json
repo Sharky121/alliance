@@ -1,0 +1,18 @@
+{
+  "name": "alliance-mysql-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP Server for Alliance MySQL Database",
+  "main": "mcp-server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node mcp-server.js",
+    "dev": "node --inspect mcp-server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.4.0",
+    "mysql2": "^3.6.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

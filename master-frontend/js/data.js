@@ -1,26 +1,3 @@
-export const series = [
-    {
-        title: 'Стандартная серия',
-        slug: 'standart'
-    },
-    {
-        title: 'Маленькие машины',
-        slug: 'small'
-    },
-    {
-        title: 'Машины с поворотным столом',
-        slug: 'rotate_table'
-    },
-    {
-        title: 'Машины с одним выдвижным столом',
-        slug: 'one_pull_out_table'
-    },
-    {
-        title: 'Машины с двумя выдвижными столами',
-        slug: 'two_pull_out_table'
-    }
-];
-
 export const standart_series = [
     {
         title:"JS250",
@@ -5295,6 +5272,29 @@ export const two_pull_out_table_series = [
           }
         ]
     },
+];
+
+export const series = [
+  {
+      title: 'Стандартная серия',
+      slug: 'standart'
+  },
+  {
+      title: 'Маленькие машины',
+      slug: 'small'
+  },
+  {
+      title: 'Машины с поворотным столом',
+      slug: 'rotate_table'
+  },
+  {
+      title: 'Машины с одним выдвижным столом',
+      slug: 'one_pull_out_table'
+  },
+  {
+      title: 'Машины с двумя выдвижными столами',
+      slug: 'two_pull_out_table'
+  }
 ];
 
 export const productsMap = {
@@ -10590,3 +10590,42 @@ export const productsMap = {
       ]
     }
 }
+
+export const menu = [
+  {
+      title: 'Литье пластмасс',
+      url: '?view=catalog&amp;cat=1'
+  },
+  {
+      title: 'Литье цветных металлов',
+      url: '?view=catalog&amp;cat=2'
+  },
+  {
+      title: 'Периферийное оборудование',
+      url: '?view=catalog&amp;cat=3'
+  },
+  {
+      title: 'Контрактное литье',
+      url: '?view=service#contract-casts'
+  },
+  {
+      title: 'Пресс-формы',
+      url: '?view=pressform'
+  },
+  {
+      title: 'Сервис',
+      url: '?view=customer-service'
+  },
+  {
+      title: 'Услуги',
+      url: '?view=service'
+  },
+  {
+      title: 'Видео',
+      url: '?view=news'
+  },
+  {
+      title: 'Контакты',
+      url: '?view=contacts'
+  }
+];

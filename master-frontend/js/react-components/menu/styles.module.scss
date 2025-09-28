@@ -1,0 +1,90 @@
+@use './../../../scss/abstract' as var;
+
+.menu {
+    position: relative;
+
+    width: 100%;
+    margin-top: 20px;
+}
+
+.menuList {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.menuItem:first-child {
+    margin-right: auto;
+}
+
+.menuItemButton {
+    @extend %btn-reset;
+
+    position: relative;
+
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+
+    text-transform: uppercase;
+    
+    &:hover {
+        opacity: 0.7;
+    }
+
+    padding-right: 20px;
+
+    &::before,
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 50%;
+      right: 0;
+
+      width: 14px;
+      height: 2px;
+
+      background-color: #ffffff;
+
+      transition: all 0.3s ease 0s;
+    }
+
+    &::after {
+      transform: rotate(90deg);
+    }
+}
+
+.menuItemButtonActive {
+    &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(135deg);
+      }
+}
+
+.menuLink {
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.subMenu {
+    position: static;
+    margin-top: 10px;
+}
+
+.subMenuList {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}

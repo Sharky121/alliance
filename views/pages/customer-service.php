@@ -74,6 +74,7 @@
       </li>
     </ul>
   </section>
+
   <section class="customer-service__section customer-service-consult">
     <h2 class="section__title title-bg">
       <span class="title-bg__bg-text">Вопросы</span>
@@ -103,6 +104,7 @@
       <button class="question-form__btn form-btn form-btn--green" onclick="ym(33475678,'reachGoal','sendQuestion'); return true;">Отправить</button>
     </form>
   </section>
+  
   <section class="customer-service__section supplied-equipment">
     <h2 class="section__title title-bg">
       <span class="title-bg__bg-text">Оборудование</span>
@@ -125,7 +127,7 @@
         </div>
 
         <p class="supplied-equipment-item__title">
-          Машины для литья цветных металлов и сплавов крупнейшего мирового производителя <b>L.K. MACHINERY MANUFACTURING CO., LTD</b> с оборотом компании 550 миллиардов долларов;
+          Машины для литья цветных металлов и сплавов крупнейшего мирового производителя <b>LANSON PRECISION MACHINERY CO.,LTD</b> с оборотом компании 550 миллиардов долларов;
         </p>
         <a class="supplied-equipment-item__btn btn btn--green-border-hover" href="?view=catalog&amp;cat=2">Перейти</a>
       </li>

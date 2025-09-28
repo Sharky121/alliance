@@ -1,14 +1,7 @@
 <?php
-$link = @mysqli_connect(
-     'mysql',
-     'root',
-     'root',
-     'p530117_alliance'
-  // 'p530117.mysql.ihc.ru',
-  // 'p530117_alliance',
-  // 'frutWYeStC',
-  // 'p530117_alliance'
-) or die('Ошибка: Невозможно подключиться к MySQL '. mysqli_connect_error());
+require_once __DIR__ . '/../../config/database.php';
+
+$link = get_db_connection();
 @mysqli_set_charset($link, "utf8");
 
 $sql = "SELECT id, title, author, created_at, news_date, content, small_content FROM news ORDER BY news_date DESC LIMIT 4";
@@ -31,8 +24,8 @@ $day = date("d", strtotime($news_date));
     <div class="bg-video" id="player"></div>
   </div>
 
-  <div class="container section-header__container">
-    <h2 class="section-header__title">18 лет на рынке оборудования<br> по переработке пластмасс и цветных металлов</h2>
+  <div class="container section-header__container" style="padding-top: 260px;">
+    <h2 class="section-header__title">19 лет на рынке оборудования<br> по переработке пластмасс и цветных металлов</h2>
     <p class="section-header__text">Тщательный выбор поставщиков позволил нам подобрать для Вас оптимальную линейку оборудования по соотношению цена-качество</p>
     <a class="btn section-header__btn" href="?view=products">Наше оборудование</a>
     <p class="section-header__subtitle">
@@ -64,8 +57,8 @@ $day = date("d", strtotime($news_date));
           <div class="features-item__circle">
             <img class="features-item__img" src="/img/aluminum.svg" width="32" height="32" alt="Литье цветных металлов и сплавов под давлением">
           </div>
-          <h3 class="features-item__title">Литье цветных металлов и сплавов под давлением</h3>
-          <p class="features-item__text">Литье цветных металлов и сплавов под давлением» - Альянс-Пром эксклюзивный представитель крупнейшего мирового производителя оборудования для литья под давлением цветных металлов и сплавов - LANSON PRECISION MACHINERY CO., LTD</p>
+          <h3 class="features-item__title">Оборудование для литья цветных металлов и сплавов под давлением</h3>
+          <p class="features-item__text">Альянс-Пром - эксклюзивный представитель крупнейшего мирового производителя оборудования для литья под давлением цветных металлов и сплавов - LANSON PRECISION MACHINERY CO., LTD</p>
         </a>
       </li>
       <li class="features-list__item features-item">

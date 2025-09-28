@@ -1,0 +1,36 @@
+@use './../../../scss/abstract' as var;
+
+.mainNav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.catalogButton {
+    @extend %btn-reset;
+
+    position: relative;
+
+    margin-right: auto;
+
+    span {
+        text-transform: uppercase;
+        color: #ffffff;
+        font-size: 14px;
+    }
+}
+
+.navList {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: auto;
+    gap: 10px;
+}
+
+.navLink {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 14px;
+}

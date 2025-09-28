@@ -1,6 +1,42 @@
 <?php
 
-require_once 'parts/init.php';
+// Загружаем переменные окружения
+$env_file = __DIR__ . '/.env';
+if (file_exists($env_file)) {
+    $lines = file($env_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        // Пропускаем комментарии
+        if (strpos(trim($line), '#') === 0) {
+            continue;
+        }
+        
+        // Разбиваем строку на ключ и значение
+        list($key, $value) = explode('=', $line, 2);
+        $key = trim($key);
+        $value = trim($value);
+        
+        if (!empty($key)) {
+            putenv("$key=$value");
+            $_ENV[$key] = $value;
+            $_SERVER[$key] = $value;
+        }
+    }
+} else {
+    error_log("Файл .env не найден: " . $env_file);
+}
+
+// Отладочная информация
+error_log("APP_ENV: " . getenv('APP_ENV'));
+error_log("LOCAL_DB_HOST: " . getenv('LOCAL_DB_HOST'));
+error_log("PROD_DB_HOST: " . getenv('PROD_DB_HOST'));
+
+require_once 'config/database.php';
+require_once 'parts/page_functions.php';
+require_once 'parts/database.php';
+require_once 'parts/helpers.php';
+
+// Инициализируем подключение к БД
+$link = get_db_connection();
 
 const INDEX_ID = 1;
 const PRESSFORM_ID = 2;
@@ -8,52 +44,13 @@ const SERVICE_ID = 3;
 const CONTACTS_ID = 6;
 const ARTICLES_ID = 10;
 const PRODUCTION_ID = 7;
+const RECOMMENDATION_ID = 9;
 
 $view = empty($_GET['view']) ? 'index' : $_GET['view'];
 
 $template_name = $view . '.php';
 
 $categories = getCategories($link);
-
-function get_pageData(string $page, $link) {
-    if (isset($_GET['id'])) {
-        $id = intval($_GET['id']);
-    }
-
-    if (isset($_GET['cat'])) {
-        $category_url = $_GET['cat'];
-    }
-
-    switch ($page) {
-        case 'index.php':
-          return getIndex($link, INDEX_ID);
-        case 'contacts.php':
-          return getContacts($link, CONTACTS_ID);
-        case 'customer-service.php':
-        case 'service.php':
-          return getIndex($link, SERVICE_ID);
-        case 'products.php':
-          return getIndex($link, PRODUCTION_ID);
-        case 'news.php':
-          return getAllNews($link);
-        case 'news-page.php':
-          return getCurrentNews($link, $id);
-        case 'video.php':
-          return getAllVideo($link);
-        case 'catalog.php':
-          return getCatalog($link, $category_url);
-        case 'product.php':
-          return getProduct($link, $id);
-        case 'pressform.php':
-          return getIndex($link, PRESSFORM_ID);
-        case 'articles.php':
-          return getArticles($link, ARTICLES_ID);
-        case 'article-page.php':
-          return getCurrentArticle($link, $id);
-      default:
-          echo "";
-    }
-};
 
 $data = get_pageData($template_name, $link);
 

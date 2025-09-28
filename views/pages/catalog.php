@@ -57,7 +57,7 @@
       <?php if ($category_id === '2'): ?>
         <li class="product__item products-item">
           <a class="product-item__link" id="openComplexPriceModal" href="#animatedModal">
-            <img class="product-item__img" src="img/catalog/complex.png">
+            <img class="product-item__img" src="img/catalog/complex.png?hash=dfsfdf345s">
             <h4 class="product-item__title">Комплексные решения</h4>
           </a>
         </li>

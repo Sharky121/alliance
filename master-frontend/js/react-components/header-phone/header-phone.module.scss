@@ -1,0 +1,30 @@
+@use './../../../scss/abstract' as var;
+
+.phone {
+    width: 100%;
+}
+
+.phoneLink {
+    display: block;
+
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.phoneText {
+    padding-left: 5px;
+
+    font-size: 13px;
+    font-weight: 300;
+}
+
+@include var.desktop-size {
+
+    .phone {
+        width: auto;
+        margin-left: 20px;
+    }
+}
+    

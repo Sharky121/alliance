@@ -1,0 +1,31 @@
+@use './../../../scss/abstract' as var;
+
+.address {
+    margin-left: auto;
+    
+    color: #ffffff;
+    line-height: 1;
+}
+
+.addressList {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.addressTitle {
+    display: block;
+
+    font-size: 16px;
+    font-weight: 700;
+    color: inherit;
+}
+
+.addressLink {
+    font-size: 12px;
+    font-weight: 400;
+    color: inherit;
+
+    border-bottom: 1px dotted white;
+}

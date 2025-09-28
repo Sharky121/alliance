@@ -10,6 +10,57 @@
     $image_path = $product['image_path'];
     $price = $product['price'];
   };
+
+  $products = [
+    2 => [
+        'title' => 'Информация о вертикальных термопластавтоматах различных серий',
+        'app_id' => 'vert-tpa-app',
+    ],
+    13 => [
+        'title' => 'Информация о дробилках',
+        'app_id' => 'crushers-app',
+    ],
+    12 => [
+        'title' => 'Информация о шредерах',
+        'app_id' => 'shredder',
+    ],
+    14 => [
+      'title' => 'Информация о шредерах',
+      'app_id' => 'mixers',
+    ],
+    15 => [
+      'title' => 'Информация о сушилках',
+      'app_id' => 'dryers',
+    ],
+    16 => [
+      'title' => 'Информация о шредерах',
+      'app_id' => 'autoloaders',
+    ],
+    17 => [
+      'title' => 'Информация о термостатах',
+      'app_id' => 'termostats',
+    ],
+    18 => [
+      'title' => 'Информация о чиллерах',
+      'app_id' => 'chillers',
+    ],
+    20 => [
+      'title' => 'Информация о роботах',
+      'app_id' => 'robots',
+    ],
+    21 => [
+      'title' => 'Информация о транспортерах',
+      'app_id' => 'transporters',
+    ],
+    22 => [
+      'title' => 'Информация о циклонные системы',
+      'app_id' => 'cyclone',
+    ],
+    23 => [
+      'title' => 'Информация о циклонные системы',
+      'app_id' => 'screw-doser',
+    ]
+  ];
 ?>
 
 <!-- EVENTS LINE -->
@@ -31,45 +82,47 @@
     </li>
   </ul>
 
-  <?php if($product_id == 2): ?>
-    <section class="product-vert-tpa">
-      <h2 class="visually-hidden">Информация о вертикальных термопластавтоматах различных серий</h2>
-      <div id="vert-tpa-app"></div>
-    </section>
-  <?php else: ?>
-    <section class="main-content__product-info">
-      <h2 class="visually-hidden">Информация о продукте</h2>
-      <div class="product-wrapper product" itemscope itemtype="http://schema.org/Product">
-        <div class="product__img">
-          <?php if (empty($big_image_path)): ?>
-            <img src="<?= $image_path; ?>" alt="Изображение отсутствует" itemprop="image">
-          <?php else: ?>
-            <img src="<?= $big_image_path; ?>" alt="<?= $product_title; ?>" itemprop="image">
-          <?php endif; ?>
-        </div>
-        <div class="product__info product-info">
-          <h1 class="product-info__title" itemprop="name"><?= $product_title; ?></h1>
-          <?php if ($price !== NULL): ?>
-            <span class="product-info__price" itemprop="price">Цена от <?= number_format($price, 0, '', ' '); ?> ¥ (юаней) с учетом ПНР</span>
-          <?php endif; ?>
-          <p class="product-info__small_desc" itemprop="description">
-            <?php if (empty($small_desc)): ?>
-              Наша компания по праву занимает место среди ведущих поставщиков оборудования в сфере переработки пластмасс и цветных металлов
-            <?php else: ?>
-              <?= $small_desc; ?>
-            <?php endif; ?>
-          </p>
-          <a class="product-info__btn btn btn--green-border-hover" id="demo01" href="#animatedModal">Узнать цену</a>
-        </div>
-      </div>
+  <?php if (isset($products[$product_id])) {
+        $product = $products[$product_id];
+        ?>
+        <section>
+            <h2 class="visually-hidden"><?= $product['title']; ?></h2>
+            <div id="<?= $product['app_id']; ?>"></div>
+        </section>
+        <?php
+    } else {
+        ?>
+        <section class="main-content__product-info">
+            <h2 class="visually-hidden">Информация о продукте</h2>
+            <div class="product-wrapper product" itemscope itemtype="http://schema.org/Product">
+                <div class="product__img">
+                    <?php if (empty($big_image_path)): ?>
+                        <img src="<?= $image_path; ?>" alt="Изображение отсутствует" itemprop="image">
+                    <?php else: ?>
+                        <img src="<?= $big_image_path; ?>" alt="<?= $product_title; ?>" itemprop="image">
+                    <?php endif; ?>
+                </div>
+                <div class="product__info product-info">
+                    <h1 class="product-info__title" itemprop="name"><?= $product_title; ?></h1>
+                    <?php if ($price !== NULL): ?>
+                        <span class="product-info__price" itemprop="price">Цена от <?= number_format($price, 0, '', ' '); ?> ¥ (юаней) с учетом ПНР</span>
+                    <?php endif; ?>
+                    <p class="product-info__small_desc" itemprop="description">
+                        <?= empty($small_desc) ? 'Наша компания по праву занимает место среди ведущих поставщиков оборудования в сфере переработки пластмасс и цветных металлов' : $small_desc; ?>
+                    </p>
+                    <a class="product-info__btn btn btn--green-border-hover" id="demo01" href="#animatedModal">Узнать цену</a>
+                </div>
+            </div>
 
-      <div class="specification">
-        <?= $content; ?>
-      </div>
+            <div class="specification">
+                <?= $content; ?>
+            </div>
 
-      <p class="small-text">*Мы оставляем за собой право вносить изменения без предварительного уведомления.</p>
-    </section>
-  <?php endif; ?>
+            <p class="small-text">*Мы оставляем за собой право вносить изменения без предварительного уведомления.</p>
+        </section>
+        <?php
+    }
+    ?>
 
   <section class="main-content__callback callback">
     <h2 class="callback__title section__title title-bg">
@@ -105,28 +158,30 @@
   </section>
 </div>
 
-<!-- modal -->
-<div id="animatedModal" class="price-modal">
-  <div class="close-animatedModal">
-    <img class="closebt" src="/img/closebt.svg">
+<!-- Модальное окно УЗНАТЬ ЦЕНУ -->
+<?php if(($product_id !== '13')): ?>
+  <div id="animatedModal" class="price-modal">
+    <div class="close-animatedModal">
+      <img class="closebt" src="/img/closebt.svg">
+    </div>
+
+    <div class="modal-content">
+      <h3 class="price-modal__title">Заполните форму и мы вышлем коммерческое предложение</h3>
+
+      <form class="price-form">
+        <input name="product_title" type="hidden" value="<?= $product_title; ?>">
+
+        <label class="form-label" for="name">Ваше имя</label>
+        <input class="form-input" id="name" name="name" type="text" required>
+
+        <label class="form-label" for="name">Введите ваш email</label>
+        <input class="form-input" id="email" name="email" type="email" required>
+
+        <label class="form-label" for="name">Введите ваш номер телефона</label>
+        <input class="form-input" id="footer-phone" name="phone" type="phone" required>
+
+        <button class="form-btn" onclick="ym(33475678,'reachGoal','getPrice'); return true;">Отправить</button>
+      </form>
+    </div>
   </div>
-
-  <div class="modal-content">
-    <h3 class="price-modal__title">Заполните форму и мы вышлем коммерческое предложение</h3>
-
-    <form class="price-form">
-      <input name="product_title" type="hidden" value="<?= $product_title; ?>">
-
-      <label class="form-label" for="name">Ваше имя</label>
-      <input class="form-input" id="name" name="name" type="text" required>
-
-      <label class="form-label" for="name">Введите ваш email</label>
-      <input class="form-input" id="email" name="email" type="email" required>
-
-      <label class="form-label" for="name">Введите ваш номер телефона</label>
-      <input class="form-input" id="footer-phone" name="phone" type="phone" required>
-
-      <button class="form-btn" onclick="ym(33475678,'reachGoal','getPrice'); return true;">Отправить</button>
-    </form>
-  </div>
-</div>
+<?php endif; ?>

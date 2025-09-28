@@ -19,6 +19,11 @@ module.exports = {
     module: {
         rules: [
           {
+            test: /\.ts?$/,
+            use: 'ts-loader',
+            exclude: /node_modules/,
+          },
+          {
             test: /\.js$/,
             exclude: /node_modules/,
             use: {
@@ -26,12 +31,18 @@ module.exports = {
             },
           },
           {
-            test: /\.jsx?$/,
-            exclude: /(node_modules)/,
-            loader: 'babel-loader',
-            options: {
-              presets:['@babel/preset-env', '@babel/preset-react']
-            }
+            test: /\.(js|jsx|ts|tsx)$/,
+            exclude: /node_modules/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: [
+                        '@babel/preset-env',
+                        '@babel/preset-react',
+                        '@babel/preset-typescript',
+                    ],
+                },
+            },
           },
           {
             test: /\.(scss|css)$/,
@@ -63,15 +74,15 @@ module.exports = {
             type: 'asset/resource',
           }
         ],
-      },
-      resolve: {
-        extensions: ['.js', '.jsx'],
+    },
+    resolve: {
+        extensions: ['.js', '.jsx', '.tsx', '.ts'],
         modules: [
           path.resolve(__dirname, "images"),
           "node_modules"
         ],
-      },
-      plugins: [
+    },
+    plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin(),
         new webpack.ProvidePlugin({
@@ -82,5 +93,5 @@ module.exports = {
         new webpack.ProvidePlugin({
           "React": "react",
         }),
-      ],
+    ],
 };

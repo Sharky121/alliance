@@ -9,22 +9,10 @@ $(document).ready(function () {
   const headerMainHeight = headerMain.innerHeight();
 
   const Node = {
-    MAIN_NAV: document.querySelector(`.main-nav`),
-    NAV_BUTTON_TOGGLE: document.querySelector(`.main-nav__toggle`),
     PRICE_FORM: document.querySelector(`.price-form`)
   }
   const demo1 = $('#demo01');
   const complexPriceModalButton = $('#openComplexPriceModal');
-
-  const navButtonClickHandler = () => {
-    if (Node.MAIN_NAV.classList.contains(`main-nav--closed`)) {
-      Node.MAIN_NAV.classList.remove(`main-nav--closed`);
-      Node.MAIN_NAV.classList.add(`main-nav--open`);
-    } else {
-      Node.MAIN_NAV.classList.add(`main-nav--closed`);
-      Node.MAIN_NAV.classList.remove(`main-nav--open`);
-    }
-  }
 
   if (map) {
     const svgMap = Snap(map);
@@ -64,10 +52,6 @@ $(document).ready(function () {
       });
     }
   }
-
-  Node.MAIN_NAV.classList.remove(`main-nav--nojs`);
-
-  Node.NAV_BUTTON_TOGGLE.addEventListener(`click`, navButtonClickHandler);
 
   $(window).scroll(function () {
     if ($(window).scrollTop() > headerMainHeight) {

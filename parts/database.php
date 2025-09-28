@@ -74,9 +74,11 @@ function getProduct($link, $id): array
 
 function getArticles($link): array
 {
-  $sql = "SELECT id, title, small_image_path, small_content, content, seo_title, seo_description FROM articles ORDER BY id DESC";
+    $sql = "SELECT id, title, small_image_path, small_content, content, seo_title, seo_description 
+            FROM articles 
+            ORDER BY id ASC";
 
-  return fetchData($link, $sql);
+    return fetchData($link, $sql);
 }
 
 function getCurrentArticle($link, $id): array

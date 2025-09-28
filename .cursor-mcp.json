@@ -1,0 +1,14 @@
+{
+    "mcpServers": {
+        "alliance-mysql": {
+            "command": "node",
+            "args": [
+                "mcp-server.js"
+            ],
+            "cwd": "/home/dima/docker_sites/alliance/www/alliance.local",
+            "env": {
+                "NODE_ENV": "production"
+            }
+        }
+    }
+}

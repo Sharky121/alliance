@@ -1,4 +1,8 @@
 @use "./fonts";
 
+@use "./blocks/telegram-popup";
+@use "./blocks/privacy-policy";
 @use "./blocks/press-promo";
+@use "./blocks/articles";
 @use "./libs/brand-sweet-alert";
+@use "./blocks//content-page";

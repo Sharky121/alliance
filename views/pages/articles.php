@@ -12,7 +12,7 @@
       <a class="breadcrumbs-list__link" href="index.php">Главная</a>
     </li>
     <li class="breadcrumbs-list__item">
-      <a class="breadcrumbs-list__link" href="?view=articles">Полезные материалы</a>
+      <a class="breadcrumbs-list__link" href="?view=recommendation">Рекомендации производителей</a>
     </li>
   </ul>
 
@@ -30,7 +30,7 @@
                   <?= $article['title']; ?>
                 </a>
               </h3>
-              <?= cutTextArticle($article['small_content'], $article['id'], 92, 'text'); ?>
+              <?= cutTextArticle($article['small_content'], $article['id'], 92, 'text'); ?> 
             </div>
           </article>
         </li>
@@ -38,3 +38,4 @@
     </ul>
   </section>
 </div>
+

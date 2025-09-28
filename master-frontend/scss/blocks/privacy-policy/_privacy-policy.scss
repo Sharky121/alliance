@@ -1,0 +1,101 @@
+.privacy-policy {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.privacy-policy__content {
+    text-align: center;
+}
+
+.privacy-policy__text {
+    margin: 0 0 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.privacy-policy__buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.privacy-policy__btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.privacy-policy__btn--accept {
+    background: #4db6ac;
+    ;
+    color: white;
+}
+
+.privacy-policy__btn--accept:hover {
+    background: #4db6ac;
+    transform: translateY(-2px);
+}
+
+.privacy-policy__btn--policy {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+.privacy-policy__btn--policy:hover {
+    background: white;
+    color: black;
+    transform: translateY(-2px);
+}
+
+/* Анимация появления */
+.privacy-policy.show {
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateX(-50%) translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .privacy-policy {
+        bottom: 10px;
+        padding: 15px;
+        max-width: 90%;
+    }
+    
+    .privacy-policy__buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .privacy-policy__btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
